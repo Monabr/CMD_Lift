@@ -125,7 +125,7 @@ class Lift{
     }
 
     private void getInLiftDown(ArrayList<Human> humansAtFloor) {
-        for (int i = 0; (humansInLift.size() < maxPeople) && (humansAtFloor.size() > 0); i++) {
+        for (int i = 0; (humansInLift.size() < maxPeople) && (humansAtFloor.size() > 0) && (i < humansAtFloor.size()); i++) {
             if(humansAtFloor.get(i).getToFloor() < currentFloor){
                 humansInLift.add(humansAtFloor.get(i));
                 humansAtFloor.remove(i);
@@ -136,7 +136,7 @@ class Lift{
     }
 
     private void getInLiftUp(ArrayList<Human> humansAtFloor) {
-        for (int i = 0; (humansInLift.size() < maxPeople) && (humansAtFloor.size() > 0); i++) {
+        for (int i = 0; (humansInLift.size() < maxPeople) && (humansAtFloor.size() > 0) && (i < humansAtFloor.size()); i++) {
             if(humansAtFloor.get(i).getToFloor() > currentFloor){
                 humansInLift.add(humansAtFloor.get(i));
                 humansAtFloor.remove(i);
